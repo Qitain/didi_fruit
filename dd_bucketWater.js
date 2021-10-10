@@ -6,7 +6,8 @@
 // docker环境变量名:DD_TOKEN,多账号用换行或者应为逗号(,)隔开
 
 // [task_local]
-// 1 */1 * * * https://raw.githubusercontent.com/passerby-b/didi_fruit/main/dd_bucketWater.js
+// 水桶水滴收取
+// 1 */1 * * * https://raw.githubusercontent.com/Qitain/didi_fruit/main/dd_bucketWater.js
 
 
 
@@ -16,7 +17,7 @@ let tokens = [], token = '', notify = '', nickName = '';
 
     // 判断环境变量里面是否有token
     if ($.env.isNode) {
-        tokens = require('./dd_cookie');
+        tokens = require('./Qitain_didi_fruit_dd_cookie');
         if (process.env.DD_TOKEN) {
             if (process.env.DD_TOKEN.indexOf(',') > -1) {
                 tokens = process.env.DD_TOKEN.split(',');
