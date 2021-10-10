@@ -6,7 +6,7 @@ boxjs订阅地址:https://gitee.com/passerby-b/javascript/raw/master/JD/passerby
 docker环境变量名:DD_TOKEN,多账号换行或英文逗号(,)隔开
 
 [task_local]
-10 0,8,12,18 * * * https://raw.githubusercontent.com/passerby-b/didi_fruit/main/dd_fruit.js
+10 0,8,12,18 * * * https://raw.githubusercontent.com/Qitain/didi_fruit/main/dd_fruit.js
 
 */
 
@@ -15,7 +15,7 @@ let tokens = [];//nodejs填写此处['tk1','tk2']
 const $ = new API("dd_fruit");
 !(async () => {
     //https://cdn.jsdelivr.net/gh/passerby-b/didi_fruit@main/dd_fruit_code.js
-    await $.http.get({ url: 'https://ghproxy.com/https://raw.githubusercontent.com/passerby-b/didi_fruit/main/dd_fruit_code.js' }).then(async response => {
+    await $.http.get({ url: 'https://ghproxy.com/https://raw.githubusercontent.com/Qitain/didi_fruit/main/dd_fruit_code.js' }).then(async response => {
         if (!!response.body) await eval(response.body);
     });
 })().catch(async (e) => {
